@@ -23,7 +23,7 @@ function App(props: AppProps) {
         </Link> */}
 
         <a href="https://github.com/wenchonglee" target="_blank" rel="noopener noreferrer">
-          <Image src="/Github.png" alt="Github Icon" width={24} height={24} />
+          <Image src="/GitHub.png" alt="Github Icon" width={24} height={24} />
         </a>
       </div>
 
