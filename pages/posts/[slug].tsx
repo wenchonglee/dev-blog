@@ -1,5 +1,7 @@
+import * as HeroComponents from "components/Hero";
 import fs from "fs";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import { rehypePlugins } from "next.config.mjs";
 import Head from "next/head";
@@ -18,6 +20,10 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <meta property="title" content={post.data.title} key="title" />
         <meta property="description" content={post.data.excerpt} key="description" />
       </Head>
+
+      <div>
+        <MDXRemote {...post.mdxSource} components={HeroComponents} />
+      </div>
     </>
   );
 };
