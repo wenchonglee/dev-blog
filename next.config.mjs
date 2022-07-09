@@ -1,11 +1,12 @@
 import nextMdx from "@next/mdx";
+import fs from "fs";
 import rehypePrettyCode from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
 
 const rehypePrettyCodeOptions = {
-  theme: "github-light", // Use one of Shiki's packaged themes https://github.com/shikijs/shiki/blob/main/docs/themes.md
+  theme: JSON.parse(fs.readFileSync("./gruvbox.json"), "utf-8"),
   onVisitLine(node) {
-    // Prevent lines from collapsing in `display: grid` mode, and
-    // allow empty lines to be copy/pasted
+    // Prevent lines from collapsing in `display: grid` mode, and allow empty lines to be copy/pasted
     if (node.children.length === 0) {
       node.children = [{ type: "text", value: " " }];
     }
@@ -20,12 +21,13 @@ const rehypePrettyCodeOptions = {
 };
 
 export const rehypePlugins = [[rehypePrettyCode, rehypePrettyCodeOptions]];
+export const remarkPlugins = [remarkGfm];
 
 const withMDX = nextMdx({
   extension: /\.mdx?$/,
   options: {
     providerImportSource: "@mdx-js/react",
-    remarkPlugins: [],
+    remarkPlugins,
     rehypePlugins,
   },
 });
@@ -35,6 +37,11 @@ const withMDX = nextMdx({
  */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
 
 export default withMDX(nextConfig);

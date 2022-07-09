@@ -9,13 +9,14 @@ function App(props: AppProps) {
 
   return (
     <div className="main-container">
+      <div className="header-container">
       <Link href="/">
         <a className="header">
           <Image className="header-avatar" src={Avatar} alt="Avatar" width={100} height={100} />
-
           <h1>Wen Chong</h1>
         </a>
       </Link>
+      </div>
 
       <div className="nav-links">
         {/* <Link href="/about">
@@ -27,7 +28,9 @@ function App(props: AppProps) {
         </a>
       </div>
 
+      <div>
       <Component {...pageProps} />
+      </div>
     </div>
   );
 }

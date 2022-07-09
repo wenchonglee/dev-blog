@@ -37,6 +37,7 @@ body {
   --color-primary-light: #8aa6a3;
   --color-primary-dark: #4c5958;
   --color-primary-gray: #bfbfbf;
+  --color-text-muted: #57606a;
 }
 /* 
 html[data-theme="dark"] {
@@ -56,14 +57,18 @@ div[data-rehype-pretty-code-fragment] {
 }
 
 .main-container {
-  max-width: 65ch;
+  max-width: 80ch;
   margin: 0 auto;
   padding: 4rem 2rem;
 }
 
-.header {
+.header-container {
   display: grid;
   justify-content: center;
+}
+
+.header {
+  display: flex;
   position: relative;
   cursor: pointer;
   text-decoration: none;
@@ -75,22 +80,35 @@ div[data-rehype-pretty-code-fragment] {
   z-index: 1;
 }
 
-.header > span {
-  position: absolute !important;
-  left: -100px;
+.header > .header-avatar {
+  position: absolute;
+  left: -60px;
   right: 0px;
-  bottom: 20px;
+  bottom: 16px;
   z-index: 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
 }
 
 .nav-links {
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 24px;
   font-weight: 700;
-  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 .nav-links a {
   text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-active {
+  color: black;
 }
