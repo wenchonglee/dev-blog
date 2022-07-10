@@ -25,20 +25,23 @@
 
 html,
 body {
-  background: #f6f6f6;
+  background: var(--color-almost-white);
   padding: 0;
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif;
 }
 
 :root {
-  --color-primary: #127369;
-  --color-primary-accent: #10403b;
-  --color-primary-light: #8aa6a3;
-  --color-primary-dark: #4c5958;
-  --color-primary-gray: #bfbfbf;
-  --color-text-muted: #57606a;
+  --color-almost-white: rgb(246, 246, 246);
+  --color-text-muted: rgb(87, 96, 106);
+  --color-highlight-code: rgba(200, 200, 255, 0.1);
+  --color-highlight-accent: rgba(200, 200, 255, 0.5);
+  --color-underline-light: rgba(175, 184, 193, 0.2);
+  --color-code-background: rgba(175, 184, 193, 0.2);
+  --color-codeblock-background: rgb(29, 32, 33);
+  --color-blockquote: rgb(208, 215, 222);
 }
+
 /* 
 html[data-theme="dark"] {
 } */
@@ -52,14 +55,33 @@ pre > code {
   display: grid;
 }
 
-div[data-rehype-pretty-code-fragment] {
-  overflow: auto;
+blockquote {
+  padding: 0 1em;
+  color: var(--color-text-muted);
+  border-left: 0.25em solid var(--color-blockquote);
+  margin: 0;
+}
+
+:not(pre) > code {
+  padding: 0.2em 0.4em;
+  background-color: var(--color-code-background);
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
 }
 
 .main-container {
   max-width: 80ch;
   margin: 0 auto;
   padding: 4rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 4rem 1rem;
+  }
 }
 
 .header-container {
@@ -111,4 +133,48 @@ div[data-rehype-pretty-code-fragment] {
 
 .nav-active {
   color: black;
+}
+
+div[data-rehype-pretty-code-fragment] {
+  background-color: var(--color-codeblock-background);
+  border-radius: 8px;
+  margin: 8px 0px;
+  overflow: auto;
+}
+
+:not(div[data-rehype-pretty-code-fragment]) > pre {
+  overflow: auto;
+}
+
+div[data-rehype-pretty-code-fragment] .line {
+  padding: 0 16px;
+}
+
+div[data-rehype-pretty-code-fragment] .line.highlighted {
+  background-color: var(--color-highlight-code);
+  border-left: 2px solid var(--color-highlight-accent);
+}
+
+div[data-rehype-pretty-code-title] {
+  background-color: var(--color-highlight-code);
+  padding: 16px;
+  color: white;
+}
+
+.post-list {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.mdx-container h1:first-of-type {
+  margin-top: 0;
+  border: none;
+}
+
+.mdx-container h1,
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--color-underline-light);
 }

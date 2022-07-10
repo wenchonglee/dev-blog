@@ -4,7 +4,12 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import path from "path";
 
 export type Post = {
-  data: Record<string, any>;
+  data: {
+    title: string;
+    excerpt: string;
+    exhibit: string;
+    publishedOn: string;
+  };
   content: string;
   slug: string;
 };
@@ -22,7 +27,7 @@ export const getPosts = () => {
     const { data, content } = matter(fileContent);
 
     const slug = file.name.replace(/.mdx$/, "");
-    return { data, content, slug };
+    return { data: data as Post["data"], content, slug };
   });
 
   return posts;
@@ -33,10 +38,10 @@ export const getPost = (slug: string) => {
   const fileContent = fs.readFileSync(path.join(process.cwd(), DATA_DIR, filename), "utf-8");
   const { data, content } = matter(fileContent);
 
-  return { data, content, slug };
+  return { data: data as Post["data"], content, slug };
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<(Post | undefined)[]>) {
+export default function handler(_req: NextApiRequest, res: NextApiResponse<(Post | undefined)[]>) {
   const posts = getPosts();
 
   res.status(200).json(posts);

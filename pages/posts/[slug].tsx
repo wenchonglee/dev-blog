@@ -1,9 +1,11 @@
-import * as HeroComponents from "components/Hero";
+import { Codesandbox } from "components/Codesandbox";
+import { Exhibits } from "components/Exhibit";
+import * as ExhibitComponents from "components/Exhibit/Squiggle";
 import fs from "fs";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { rehypePlugins } from "next.config.mjs";
+import { rehypePlugins, remarkPlugins } from "next.config.mjs";
 import Head from "next/head";
 import path from "path";
 import { getPost } from "../api/posts";
@@ -13,6 +15,8 @@ const DATA_DIR = "data";
 const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { post } = props;
 
+  const Exhibit = Exhibits[post.data.exhibit as keyof typeof Exhibits];
+
   return (
     <>
       <Head>
@@ -21,8 +25,13 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <meta property="description" content={post.data.excerpt} key="description" />
       </Head>
 
-      <div>
-        <MDXRemote {...post.mdxSource} components={HeroComponents} />
+      <br />
+      <Exhibit />
+      <br />
+      <small>{post.data.publishedOn}</small>
+
+      <div className="mdx-container">
+        <MDXRemote {...post.mdxSource} components={{ ...ExhibitComponents, Codesandbox }} />
       </div>
     </>
   );
@@ -52,7 +61,7 @@ export const getStaticProps = async (props: GetStaticPropsContext<{ slug: string
 
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
-      remarkPlugins: [],
+      remarkPlugins: remarkPlugins as any,
       rehypePlugins: rehypePlugins as any,
     },
   });

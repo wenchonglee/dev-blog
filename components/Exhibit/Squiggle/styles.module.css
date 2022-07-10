@@ -1,0 +1,14 @@
+@keyframes squiggle-anim {
+  0% {
+    filter: url("#squiggle-0");
+  }
+  100% {
+    filter: url("#squiggle-100");
+  }
+}
+
+.squiggle {
+  animation: squiggle-anim 0.43s linear infinite;
+  font-size: 4rem;
+  color: white;
+}
