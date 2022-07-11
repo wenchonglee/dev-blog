@@ -23,6 +23,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <title>{post.data.title}</title>
         <meta property="title" content={post.data.title} key="title" />
         <meta property="description" content={post.data.excerpt} key="description" />
+        <meta property="og:image" content={post.data.image} key="og:image" />
       </Head>
 
       <br />

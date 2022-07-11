@@ -14,7 +14,7 @@ function App(props: AppProps) {
       <div className="header-container">
         <Link href="/">
           <a className="header">
-            <Image className="header-avatar" src={Avatar} alt="Avatar" width={100} height={100} />
+            <Image className="header-avatar" src={Avatar} alt="Avatar" width={100} height={100} priority />
             <h1>Wen Chong</h1>
           </a>
         </Link>

@@ -14,6 +14,7 @@ const Home: Homepage = (props) => {
         <title>Wen Chong</title>
         <meta name="title" content="Wen Chong" />
         <meta name="description" content="Wen Chong's site. Software Engineer specialized in React & Typescript." />
+        <meta property="og:image" content="/favicon.ico" key="og:image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

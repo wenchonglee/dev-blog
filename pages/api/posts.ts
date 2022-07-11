@@ -9,6 +9,7 @@ export type Post = {
     excerpt: string;
     exhibit: string;
     publishedOn: string;
+    image: string;
   };
   content: string;
   slug: string;
