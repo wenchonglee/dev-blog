@@ -25,12 +25,12 @@ function App(props: AppProps) {
           <Link href="/">
             <a className={pathname === "/" ? "nav-active" : ""}>Posts</a>
           </Link>
+          <Link href="/projects">
+            <a className={pathname === "/projects" ? "nav-active" : ""}>Projects</a>
+          </Link>
           <Link href="/about">
             <a className={pathname === "/about" ? "nav-active" : ""}>About</a>
           </Link>
-          {/* <Link href="/projects">
-            <a>Projects</a>
-          </Link> */}
         </div>
 
         <a href="https://github.com/wenchonglee" target="_blank" rel="noopener noreferrer">
