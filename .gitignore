@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 notes.md
+
+# sitemaps
+public/robots.txt
+public/sitemap.xml
