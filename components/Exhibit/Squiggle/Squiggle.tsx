@@ -1,11 +1,11 @@
 import exhibitStyles from "../exhibit.module.css";
 import styles from "./styles.module.css";
 
-export const Squiggle = () => {
+export const Squiggle = ({ title }: { title: string }) => {
   return (
     <div className={exhibitStyles.container}>
       <div className={styles.squiggle}>
-        <h1>↩➡</h1>
+        <h1>{title}</h1>
       </div>
 
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width={0} height={0}>

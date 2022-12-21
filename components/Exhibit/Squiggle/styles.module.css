@@ -9,6 +9,6 @@
 
 .squiggle {
   animation: squiggle-anim 0.43s linear infinite;
-  font-size: 4rem;
+  font-size: 3rem;
   color: white;
 }
