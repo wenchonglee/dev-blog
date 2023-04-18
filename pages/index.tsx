@@ -1,7 +1,8 @@
 import { PostPreview } from "components/PostPreview";
+import dayjs from "dayjs";
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { getPosts, Post } from "./api/posts";
+import { Post, getPosts } from "./api/posts";
 
 type Homepage = NextPage<{ posts: Post[] }>;
 
@@ -33,6 +34,15 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = getPosts();
 
   return {
-    props: { posts },
+    props: {
+      posts: posts.sort((a, b) => {
+        if (a && b) {
+          return (
+            dayjs(b.data.publishedOn, "DD MMM YYYY").valueOf() - dayjs(a.data.publishedOn, "DD MMM YYYY").valueOf()
+          );
+        }
+        return 0;
+      }),
+    },
   };
 };

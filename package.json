@@ -2,7 +2,7 @@
   "name": "dev-blog",
   "version": "0.1.0",
   "private": true,
-  "type":"module",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,6 +14,7 @@
     "@mdx-js/loader": "2.1.2",
     "@mdx-js/react": "2.1.2",
     "@next/mdx": "12.2.2",
+    "dayjs": "1.11.7",
     "gray-matter": "4.0.3",
     "next": "12.2.2",
     "next-mdx-remote": "4.0.3",
