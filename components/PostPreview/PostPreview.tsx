@@ -15,18 +15,16 @@ export const PostPreview = (props: PostPreviewProps) => {
   const Exhibit = Exhibits[exhibit as keyof typeof Exhibits];
 
   return (
-    <Link href={`/posts/${slug}`}>
-      <a className={styles.container}>
-        <div>
-          <Exhibit />
-        </div>
+    <Link href={`/posts/${slug}`} className={styles.container}>
+      <div>
+        <Exhibit />
+      </div>
 
-        <div className={styles.content}>
-          <small>{publishedOn}</small>
-          <h3>{title}</h3>
-          <p>{excerpt}</p>
-        </div>
-      </a>
+      <div className={styles.content}>
+        <small>{publishedOn}</small>
+        <h3>{title}</h3>
+        <p>{excerpt}</p>
+      </div>
     </Link>
   );
 };

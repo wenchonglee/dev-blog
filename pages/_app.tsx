@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import Image from "next/future/image";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Script from "next/script";
@@ -45,24 +45,22 @@ function App(props: AppProps) {
 
       <div className="main-container">
         <div className="header-container">
-          <Link href="/">
-            <a className="header">
-              <Image className="header-avatar" src={Avatar} alt="Avatar" width={100} height={100} priority />
-              <h1>Wen Chong</h1>
-            </a>
+          <Link href="/" className="header">
+            <Image className="header-avatar" src={Avatar} alt="Avatar" width={100} height={100} priority />
+            <h1>Wen Chong</h1>
           </Link>
         </div>
 
         <div className="nav-container">
           <div className="nav-links">
-            <Link href="/">
-              <a className={pathname === "/" ? "nav-active" : ""}>Posts</a>
+            <Link href="/" className={pathname === "/" ? "nav-active" : ""}>
+              Posts
             </Link>
-            <Link href="/projects">
-              <a className={pathname === "/projects" ? "nav-active" : ""}>Projects</a>
+            <Link href="/projects" className={pathname === "/projects" ? "nav-active" : ""}>
+              Projects
             </Link>
-            <Link href="/about">
-              <a className={pathname === "/about" ? "nav-active" : ""}>About</a>
+            <Link href="/about" className={pathname === "/about" ? "nav-active" : ""}>
+              About
             </Link>
           </div>
 
