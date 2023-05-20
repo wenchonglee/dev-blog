@@ -37,11 +37,6 @@ const withMDX = nextMdx({
  */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
-  experimental: {
-    images: {
-      allowFutureImage: true,
-    },
-  },
 };
 
 export default withMDX(nextConfig);
