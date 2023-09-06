@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <Layout
@@ -7,7 +8,8 @@ import Layout from "../layouts/BlogPost.astro";
   description="I'm a Software Engineer based in Singapore. I primarily work as a front-end web developer, using React & Typescript"
   pubDate={new Date("Jul 03 2022")}
 >
-  <!-- heroImage="/blog-placeholder-about.jpg" -->
+    <ViewTransitions />
+    <!-- heroImage="/blog-placeholder-about.jpg" -->
   <p>
     I'm a Software Engineer based in Singapore. I primarily work as a front-end web developer, but I dabble in DevOps
     and backend too.

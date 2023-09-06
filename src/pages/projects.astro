@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <Layout title="My Projects" description="Personal projects I've worked on" pubDate={new Date("Jul 03 2022")}>
-  <h4>
+    <ViewTransitions />
+    <h4>
     This site <a href="https://github.com/wenchonglee/dev-blog" target="_blank" style="color: black">
       <span class="sr-only">Repository site</span>
       <svg viewBox="0 0 16 16" aria-hidden="true" width="24" height="24" astro-icon="social/github"
