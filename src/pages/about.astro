@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/BlogPost.astro";
+---
+
+<Layout
+  title="About Me"
+  description="I'm a Software Engineer based in Singapore. I primarily work as a front-end web developer, using React & Typescript"
+  pubDate={new Date("Jul 03 2022")}
+>
+  <!-- heroImage="/blog-placeholder-about.jpg" -->
+  <p>
+    I'm a Software Engineer based in Singapore. I primarily work as a front-end web developer, but I dabble in DevOps
+    and backend too.
+  </p>
+
+  <h4>Current employment</h4>
+  <div>Senior Software Engineer @ Centre for Strategic Infocomm Technologies (CSIT), Singapore</div>
+
+  <p>
+    At CSIT, I lead the front-end development of an internal enterprise web app. Another responsibility I have is
+    helping to architect the front-end solution of a project that is unifying multiple existing apps.
+  </p>
+
+  <h4>Tech stack</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Domain</th>
+        <th>Language/framework/tools</th>
+      </tr>
+      <tr>
+        <th colspan="2">Professional experience</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Frontend</td>
+        <td>Typescript, React</td>
+      </tr>
+      <tr>
+        <td>Backend</td>
+        <td>Spring boot (Java), Oracle RDBMS, Mongodb</td>
+      </tr>
+      <tr>
+        <td>Scripting</td>
+        <td>Python, Jupyter</td>
+      </tr>
+      <tr>
+        <td>DevOps</td>
+        <td>Docker, Kubernetes, Helm, Gitlab CI</td>
+      </tr>
+    </tbody>
+    <tr>
+      <td style="visibility: hidden">--</td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><strong>Hobby/personal exploration</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2">Nodejs (express), Phoenix LiveView</td>
+    </tr>
+  </table>
+
+  <br />
+  <h4>Get in touch</h4>
+
+  <div>
+    I'm always open to opportunities, you can reach me at:
+
+    <ul>
+      <li><a href="mailto:wenchong.lee@gmail.com">wenchong.lee@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/wenchonglee/">LinkedIn</a></li>
+      <li><a href="https://github.com/wenchonglee">Github</a></li>
+    </ul>
+  </div>
+</Layout>
