@@ -4,6 +4,7 @@ description: "Resolving an unexpected behavior of flexboxes with overflowing chi
 pubDate: "21 Dec 2022"
 heroImage: "/css-waylt/hero.jpg"
 heroAttribution: "Photo by Cintya Marisa on Unsplash"
+squiggleText: "(╯°□°）╯"
 ---
 
 It is always a learning journey with CSS, as there are many "edge cases" and they are often infuriating to resolve.
@@ -23,7 +24,7 @@ The width of the "undesired" example maintains at its `max-width` even when the 
 
 <div
   style={{
-    backgroundColor: "rgb(var(--gray-light))",
+    backgroundColor: "var(--code-bg)",
     borderRadius: "4px",
     resize: "horizontal",
     animation: "3s ease-in-out infinite alternate resize",
@@ -47,8 +48,7 @@ The width of the "undesired" example maintains at its `max-width` even when the 
     </div>
   </div>
 </div>
-
----
+<br />
 
 ## Solution
 

@@ -4,6 +4,7 @@ description: "Comparing Playwright vs Cypress as E2E test frameworks"
 pubDate: "27 Feb 2023"
 heroImage: "/playwright-vs-cypress/hero.jpg"
 heroAttribution: "Photo by Zdeněk Macháček Unsplash"
+squiggleText: "🧪"
 ---
 
 <!-- ---

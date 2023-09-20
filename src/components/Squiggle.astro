@@ -1,0 +1,75 @@
+---
+interface Props {
+  title: string;
+  transitionName: string;
+}
+
+const { title, transitionName } = Astro.props;
+---
+
+<div class="container">
+  <div class="squiggle">
+    <span class="squiggle-title" transition:name={transitionName}>{title}</span>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width={0} height={0}>
+    <defs>
+      <filter id="squiggle-0">
+        <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="3" result="noise" seed="0"></feTurbulence>
+        <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="8"></feDisplacementMap>
+      </filter>
+      <filter id="squiggle-100">
+        <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="3" result="noise" seed="4"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="8"></feDisplacementMap>
+      </filter>
+    </defs>
+  </svg>
+</div>
+
+<style>
+  @keyframes squiggle-anim {
+    0% {
+      filter: url("#squiggle-0");
+    }
+    100% {
+      filter: url("#squiggle-100");
+    }
+  }
+
+  .container {
+    height: 18em;
+    aspect-ratio: 3/2;
+    border-radius: 8px;
+    background-color: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .squiggle-title {
+    color: white;
+    font-size: 1.5em;
+  }
+
+  .squiggle {
+    animation: squiggle-anim 0.43s linear infinite;
+    font-size: 3rem;
+    color: white;
+    transition: transform 200ms;
+  }
+
+  .container:hover .squiggle {
+    animation: squiggle-anim 0.23s linear infinite;
+    transform: scale(1.1);
+    transform: rotate(-25deg);
+  }
+
+  @media (max-width: 720px) {
+    .container {
+      height: 10em;
+    }
+    .squiggle-title {
+      font-size: 1.25em;
+    }
+  }
+</style>

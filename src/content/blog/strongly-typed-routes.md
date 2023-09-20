@@ -4,6 +4,7 @@ description: "How to organize and safely manage routes in a React SPA, with the 
 pubDate: "11 Jul 2022"
 heroImage: "/strongly-typed-routes/hero.jpg"
 heroAttribution: "Photo by Tormius on Unsplash"
+squiggleText: "↩➡"
 ---
 
 > **Note: This article will be made redundant when @tanstack/router is released**

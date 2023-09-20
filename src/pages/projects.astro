@@ -3,10 +3,15 @@ import Layout from "../layouts/BlogPost.astro";
 import { ViewTransitions } from "astro:transitions";
 ---
 
-<Layout title="My Projects" description="Personal projects I've worked on" pubDate={new Date("Jul 03 2022")}>
-    <ViewTransitions />
-    <h4>
-    This site <a href="https://github.com/wenchonglee/dev-blog" target="_blank" style="color: black">
+<Layout
+  title="My Projects"
+  description="Personal projects I've worked on"
+  pubDate={new Date("Jul 03 2022")}
+  squiggleText=""
+>
+  <ViewTransitions />
+  <h4>
+    This site <a href="https://github.com/wenchonglee/dev-blog" target="_blank" style="color: white">
       <span class="sr-only">Repository site</span>
       <svg viewBox="0 0 16 16" aria-hidden="true" width="24" height="24" astro-icon="social/github"
         ><path
@@ -23,7 +28,7 @@ import { ViewTransitions } from "astro:transitions";
 
   <h4>
     Mantine Salt
-    <a href="https://github.com/wenchonglee/dev-blog" target="_blank" style="color: black">
+    <a href="https://github.com/wenchonglee/dev-blog" target="_blank" style="color: white">
       <span class="sr-only">Repository site</span>
       <svg viewBox="0 0 16 16" aria-hidden="true" width="24" height="24" astro-icon="social/github"
         ><path
@@ -39,7 +44,7 @@ import { ViewTransitions } from "astro:transitions";
     sharing.
 
     <p>
-      <a href="https://mantine-salt.vercel.app" target="_blank" style="color: black">
+      <a href="https://mantine-salt.vercel.app" target="_blank">
         <span class="sr-only">Demo site</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
