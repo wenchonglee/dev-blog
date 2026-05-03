@@ -1,0 +1,6 @@
+name = "dev-blog"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "VIEWS"
+id = "28578b08f1894724948a1807e9e981fb"
